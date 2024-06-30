@@ -105,6 +105,7 @@ const roulettewarn = "データを一つ以上いれてください！";
                 spinDuration={0.5}
                 onStopSpinning={() => {
                     setmustSpin(false);
+                    alert(data[prizeNumber].option)
                 }}
             />
 
