@@ -14,6 +14,13 @@ import imglotus     from "@/../public/images/Button/LOTUS.webp"
 import imgpearl     from "@/../public/images/Button/PEARL.webp"
 import imgsplit     from "@/../public/images/Button/SPLIT.webp"
 import imgsunset    from "@/../public/images/Button/SUNSET.webp"
+import test from "@/../public/images/Result/ASCENT.png"
+import pointerimg from "@/../public/images/Default/pointer_cursor.png"
+
+
+
+
+
 
 
 export default function Home() {
@@ -73,15 +80,11 @@ const roulettewarn = "データを一つ以上いれてください！";
                     data.push({ option: mapname }); //配列に追加
                     if(data.some(item => item.option === roulettewarn)) {
                         data = data.filter(item => item.option !== roulettewarn); //エラーを配列から削除
-                    }
-                }
+                    }}
             }
             return data;
         });
     }
-
-
-
 
 
     //ルーレットスピン開始
@@ -96,14 +99,13 @@ const roulettewarn = "データを一つ以上いれてください！";
 
     };
 
-
-
     return (
     <main>
         <div className="text-red-600 text-6xl">TITLE</div>
-        <button onClick={()=>roulettebtn()}>ROULETTE START</button>
+        <button onClick={()=>roulettebtn()}>[ROULETTE START]</button>
             <Wheel
                 mustStartSpinning={mustSpin}
+                //pointerProps={ {src:pointerimg.src}}
                 prizeNumber={prizenumber}
                 data={data}
                 backgroundColors={['#3e3e3e', '#df3428']}
@@ -120,55 +122,59 @@ const roulettewarn = "データを一つ以上いれてください！";
                 }}
             />
 
-        <p>{result}</p>
-        {/* ASCENT */}
-        <button onClick={()=>handler(isascent, setAscent, nameascent)}>
-            <Button bool={isascent} image={imgascent}/>
-        </button>
+        <div className="text-4xl">RESULT:{result}</div>
 
-        {/* BIND */}
-        <button onClick={()=>handler(isbind, setBind, namebind)}>
-            <Button bool={isbind} image={imgbind}/>
-        </button>
+        {/* BUTTON */}
+        <div>
+            {/* ASCENT */}
+            <button onClick={()=>handler(isascent, setAscent, nameascent)}>
+                <Button bool={isascent} image={imgascent}/>
+            </button>
 
-        {/* BREEZE */}
-        <button onClick={()=>handler(isbreeze, setbreeze, namebreeze)}>
-            <Button bool={isbreeze} image={imgbreeze}/>
-        </button>
+            {/* BIND */}
+            <button onClick={()=>handler(isbind, setBind, namebind)}>
+                <Button bool={isbind} image={imgbind}/>
+            </button>
 
-        {/* FRACTURE */}
-        <button onClick={()=>handler(isfracture, setFracture, namefracture)}>
-            <Button bool={isfracture} image={imgfracture}/>
-        </button>
+            {/* BREEZE */}
+            <button onClick={()=>handler(isbreeze, setbreeze, namebreeze)}>
+                <Button bool={isbreeze} image={imgbreeze}/>
+            </button>
 
-        {/* HAVEN */}
-        <button onClick={()=>handler(ishaven, setHaven, namehaven)}>
-            <Button bool={ishaven} image={imghaven}/>
-        </button>
+            {/* FRACTURE */}
+            <button onClick={()=>handler(isfracture, setFracture, namefracture)}>
+                <Button bool={isfracture} image={imgfracture}/>
+            </button>
 
-        {/* ICEBOX */}
-        <button onClick={()=>handler(isicebox, setIcebox, nameicebox)}>
-            <Button bool={isicebox} image={imgicebox}/>
-        </button>
+            {/* HAVEN */}
+            <button onClick={()=>handler(ishaven, setHaven, namehaven)}>
+                <Button bool={ishaven} image={imghaven}/>
+            </button>
 
-        {/* LOTUS */}
-        <button onClick={()=>handler(islotus, setLotus, namelotus)}>
-            <Button bool={islotus} image={imglotus}/>
-        </button>
+            {/* ICEBOX */}
+            <button onClick={()=>handler(isicebox, setIcebox, nameicebox)}>
+                <Button bool={isicebox} image={imgicebox}/>
+            </button>
 
-        {/* PEARL */}
-        <button onClick={()=>handler(ispearl, setPearl, namepearl)}>
-            <Button bool={ispearl} image={imgpearl}/>
-        </button>
+            {/* LOTUS */}
+            <button onClick={()=>handler(islotus, setLotus, namelotus)}>
+                <Button bool={islotus} image={imglotus}/>
+            </button>
 
-        {/* SPLIT */}
-        <button onClick={()=>handler(issplit, setSplit, namesplit)}>
-            <Button bool={issplit} image={imgsplit}/>
-        </button>
+            {/* PEARL */}
+            <button onClick={()=>handler(ispearl, setPearl, namepearl)}>
+                <Button bool={ispearl} image={imgpearl}/>
+            </button>
 
-        {/* SUNSET */}
-        <button onClick={()=>handler(issunset, setSunset, namesunset)}>
-            <Button bool={issunset} image={imgsunset}/>
+            {/* SPLIT */}
+            <button onClick={()=>handler(issplit, setSplit, namesplit)}>
+                <Button bool={issplit} image={imgsplit}/>
+            </button>
+
+            {/* SUNSET */}
+            <button onClick={()=>handler(issunset, setSunset, namesunset)}>
+                <Button bool={issunset} image={imgsunset}/>
         </button>
+    </div>
     </main>
 );}
