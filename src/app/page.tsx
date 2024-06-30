@@ -37,16 +37,16 @@ export default function Home() {
     const [prizenumber, setprizenumber] = useState<number>(0);
     const [result, setresult] = useState<string>("result");
     let   [data,        setdata]     = useState([
-        { option: 'ascent'  ,style:{backgroundColor: '#bac2ff'} },
-        { option: 'bind'    ,style:{backgroundColor: '#e6e5da'} },
-        { option: 'breeze'  ,style:{backgroundColor: '#72acbd'} },
-        { option: 'fracture',style:{backgroundColor: '#abbdcb'} },
-        { option: 'haven'   ,style:{backgroundColor: '#d4a19c'} },
-        { option: 'icebox'  ,style:{backgroundColor: '#98a0d0'} },
-        { option: 'lotus'   ,style:{backgroundColor: '#82bec1'} },
-        { option: 'pearl'   ,style:{backgroundColor: '#47c5d3'} },
-        { option: 'split'   ,style:{backgroundColor: '#9fd7df'} },
-        { option: 'sunset'  ,style:{backgroundColor: '#ffcae7'} },
+        { option: 'ascent'   },
+        { option: 'bind'     },
+        { option: 'breeze'   },
+        { option: 'fracture' },
+        { option: 'haven'    },
+        { option: 'icebox'   },
+        { option: 'lotus'    },
+        { option: 'pearl'    },
+        { option: 'split'    },
+        { option: 'sunset'   },
     ]);
 
     const nameascent    = 'ascent';
@@ -101,18 +101,27 @@ const roulettewarn = "データを一つ以上いれてください！";
 
     return (
     <main>
-        <div className="text-red-600 text-6xl">TITLE</div>
+        <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
         <button onClick={()=>roulettebtn()}>[ROULETTE START]</button>
+            <div className='flex justify-center'>
             <Wheel
                 mustStartSpinning={mustSpin}
                 //pointerProps={ {src:pointerimg.src}}
                 prizeNumber={prizenumber}
                 data={data}
-                backgroundColors={['#3e3e3e', '#df3428']}
+                outerBorderWidth={0}
+                innerBorderWidth={0}
+                radiusLineColor={'#000000'}
+                innerBorderColor={'#000000'}
+                backgroundColors={['#F7F9F2', '#E7F0DC']}
                 fontSize={30}
-                textColors={['#ffffff']}
+                fontFamily={'Arial'}
+                fontStyle={'normal'}
+                textColors={['#071952']}
                 disableInitialAnimation={false}
-                spinDuration={0.5}
+                spinDuration={0.5}  //スピン速度
+                innerRadius={2}
+
                 onStopSpinning={() => {
                     setmustSpin(false);
                     setresult((result) => {
@@ -122,7 +131,7 @@ const roulettewarn = "データを一つ以上いれてください！";
                     //alert(data[prizenumber].option);
                 }}
             />
-
+            </div>
         <div className="text-4xl">RESULT:{result}</div>
 
         {/* BUTTON */}
