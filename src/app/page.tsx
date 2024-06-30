@@ -38,12 +38,12 @@ export default function Home() {
     const [result, setresult] = useState<string>("result");
     let   [data,        setdata]     = useState([
         { option: 'ascent'  ,style:{backgroundColor: '#bac2ff'} },
-        { option: 'bind'    ,style:{backgroundColor: '#e6e5da'}},
+        { option: 'bind'    ,style:{backgroundColor: '#e6e5da'} },
         { option: 'breeze'  ,style:{backgroundColor: '#72acbd'} },
         { option: 'fracture',style:{backgroundColor: '#abbdcb'} },
         { option: 'haven'   ,style:{backgroundColor: '#d4a19c'} },
         { option: 'icebox'  ,style:{backgroundColor: '#98a0d0'} },
-        { option: 'lotus'   ,style:{backgroundColor: '#82bec1'}},
+        { option: 'lotus'   ,style:{backgroundColor: '#82bec1'} },
         { option: 'pearl'   ,style:{backgroundColor: '#47c5d3'} },
         { option: 'split'   ,style:{backgroundColor: '#9fd7df'} },
         { option: 'sunset'  ,style:{backgroundColor: '#ffcae7'} },
