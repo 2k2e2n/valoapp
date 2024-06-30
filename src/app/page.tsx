@@ -37,16 +37,16 @@ export default function Home() {
     const [prizenumber, setprizenumber] = useState<number>(0);
     const [result, setresult] = useState<string>("result");
     let   [data,        setdata]     = useState([
-        { option: 'ascent'   },
-        { option: 'bind'     },
-        { option: 'breeze'   },
-        { option: 'fracture' },
-        { option: 'haven'    },
-        { option: 'icebox'   },
-        { option: 'lotus'    },
-        { option: 'pearl'    },
-        { option: 'split'    },
-        { option: 'sunset'   },
+        { option: 'ascent'  ,style:{backgroundColor: '#bac2ff'} },
+        { option: 'bind'    ,style:{backgroundColor: '#e6e5da'}},
+        { option: 'breeze'  ,style:{backgroundColor: '#72acbd'} },
+        { option: 'fracture',style:{backgroundColor: '#abbdcb'} },
+        { option: 'haven'   ,style:{backgroundColor: '#d4a19c'} },
+        { option: 'icebox'  ,style:{backgroundColor: '#98a0d0'} },
+        { option: 'lotus'   ,style:{backgroundColor: '#82bec1'}},
+        { option: 'pearl'   ,style:{backgroundColor: '#47c5d3'} },
+        { option: 'split'   ,style:{backgroundColor: '#9fd7df'} },
+        { option: 'sunset'  ,style:{backgroundColor: '#ffcae7'} },
     ]);
 
     const nameascent    = 'ascent';
@@ -109,6 +109,7 @@ const roulettewarn = "データを一つ以上いれてください！";
                 prizeNumber={prizenumber}
                 data={data}
                 backgroundColors={['#3e3e3e', '#df3428']}
+                fontSize={30}
                 textColors={['#ffffff']}
                 disableInitialAnimation={false}
                 spinDuration={0.5}
