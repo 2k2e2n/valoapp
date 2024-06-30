@@ -27,6 +27,8 @@ export default function Home() {
     const [ispearl,     setPearl]    = useState<boolean>(true);
     const [issplit,     setSplit]    = useState<boolean>(true);
     const [issunset,    setSunset]   = useState<boolean>(true);
+    const [prizenumber, setprizenumber] = useState<number>(0);
+    const [result, setresult] = useState<string>("result");
     let   [data,        setdata]     = useState([
         { option: 'ascent'   },
         { option: 'bind'     },
@@ -76,7 +78,6 @@ const roulettewarn = "データを一つ以上いれてください！";
             }
             return data;
         });
-
     }
 
 
@@ -87,17 +88,23 @@ const roulettewarn = "データを一つ以上いれてください！";
     const [mustSpin, setmustSpin] = useState<boolean>(false);
     function roulettebtn () {
         setmustSpin(true);
+        setprizenumber((prizenumber) => {
+            //prizenumber = data.length -1;
+             prizenumber = Math.round(Math.random() * (data.length-1));
+            return prizenumber;
+        });
+
     };
 
 
 
-  return (
+    return (
     <main>
-      <div className="text-red-600 text-6xl">TITLE</div>
+        <div className="text-red-600 text-6xl">TITLE</div>
         <button onClick={()=>roulettebtn()}>ROULETTE START</button>
             <Wheel
                 mustStartSpinning={mustSpin}
-                prizeNumber={3}
+                prizeNumber={prizenumber}
                 data={data}
                 backgroundColors={['#3e3e3e', '#df3428']}
                 textColors={['#ffffff']}
@@ -105,10 +112,15 @@ const roulettewarn = "データを一つ以上いれてください！";
                 spinDuration={0.5}
                 onStopSpinning={() => {
                     setmustSpin(false);
-                    alert(data[prizeNumber].option)
+                    setresult((result) => {
+                        result = data[prizenumber].option;
+                        return result;
+                    });
+                    //alert(data[prizenumber].option);
                 }}
             />
 
+        <p>{result}</p>
         {/* ASCENT */}
         <button onClick={()=>handler(isascent, setAscent, nameascent)}>
             <Button bool={isascent} image={imgascent}/>
@@ -159,5 +171,4 @@ const roulettewarn = "データを一つ以上いれてください！";
             <Button bool={issunset} image={imgsunset}/>
         </button>
     </main>
-  );
-}
+);}
