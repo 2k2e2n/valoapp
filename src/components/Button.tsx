@@ -11,7 +11,7 @@ type Props = {
 
 return (
     <div>
-        <Image className={` text-white active:scale-90  transition duration-300 hover:scale-105 ${bool?'saturate-300 brightness-140 ':'saturate-0 brightness-40 scale-98'}`}
+        <Image className={` text-white active:scale-95  transition duration-150 hover:scale-105 ${bool?'saturate-300 brightness-140 ':'saturate-0 brightness-40 scale-98'}`}
             src={image}
             alt="Ascent"
             width={200}

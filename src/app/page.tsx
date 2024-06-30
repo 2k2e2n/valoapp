@@ -16,6 +16,7 @@ import imgsplit     from "@/../public/images/Button/SPLIT.webp"
 import imgsunset    from "@/../public/images/Button/SUNSET.webp"
 import test from "@/../public/images/Result/ASCENT.png"
 import pointerimg from "@/../public/images/Default/pointer_cursor.png"
+import Background from '@/components/Background';
 
 
 
@@ -101,9 +102,11 @@ const roulettewarn = "データを一つ以上いれてください！";
 
     return (
     <main>
+        <Background result={''} />
         <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
         <button onClick={()=>roulettebtn()}>[ROULETTE START]</button>
             <div className='flex justify-center'>
+            <button onClick={()=>roulettebtn()} className='transition duration-300 active:scale-90 hover:scale-105'>
             <Wheel
                 mustStartSpinning={mustSpin}
                 //pointerProps={ {src:pointerimg.src}}
@@ -131,8 +134,9 @@ const roulettewarn = "データを一つ以上いれてください！";
                     //alert(data[prizenumber].option);
                 }}
             />
+            </button>
             </div>
-        <div className="text-4xl">RESULT:{result}</div>
+        <div className="text-4xl flex justify-center">RESULT:{result}</div>
 
         {/* BUTTON */}
         <div>
