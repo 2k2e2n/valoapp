@@ -2,17 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .background {
-    background: url("../../public/images/Result/ASCENT.webp") center;
-    background-size: cover;
-    position: relative;
-    z-index: 0;
-    overflow: hidden; /*ブラー効果でボヤけた部分を非表示*/
-  }
-  .background:before {
-    content: "";
-    background: inherit; /*.bgImageで設定した背景画像を継承する*/
-    filter: blur(50px);
-  }
+:root {
+  background-color: black;
+  text-color: white;
 }

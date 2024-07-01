@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import router from "next/router";
 import Button from "@/components/Button"
 import { Wheel } from 'react-custom-roulette'
 
@@ -17,6 +18,7 @@ import imgsunset    from "@/../public/images/Button/SUNSET.webp"
 import test from "@/../public/images/Result/ASCENT.png"
 import pointerimg from "@/../public/images/Default/pointer_cursor.png"
 import Background from '@/components/Background';
+import Header from '@/components/Header';
 
 
 
@@ -91,7 +93,7 @@ export default function Home() {
     //ルーレットスピン開始
     const [mustSpin, setmustSpin] = useState<boolean>(false);
     function roulettebtn () {
-        if(!mustSpin) {
+        if(!mustSpin && !data.some(item => item.option === roulettewarn)){
             setmustSpin(true);
             setprizenumber((prizenumber) => {
                 //prizenumber = data.length -1;
@@ -106,8 +108,8 @@ export default function Home() {
         <div className="relative h-screen w-screen">
             {/* 背景画像や色 */}
             <Background mapname={result} ismustSpin={mustSpin} />
-            <div className="relative z-2 p-8 filter-none">
-
+            <div className="relative filter-none">
+        <Header />
         <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
         <button onClick={()=>roulettebtn()}>[ROULETTE START]</button>
             <div className='flex justify-center'>
