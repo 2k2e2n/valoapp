@@ -114,18 +114,18 @@ export default function Home() {
             <button onClick={()=>roulettebtn()} className={mustSpin ? '' : 'transition duration-300 active:scale-90 hover:scale-105'}>
             <Wheel
                 mustStartSpinning={mustSpin}
-                //pointerProps={ {src:pointerimg.src}}
                 prizeNumber={prizenumber}
                 data={data}
                 outerBorderWidth={0}
                 innerBorderWidth={0}
-                radiusLineColor={'#000000'}
+                radiusLineColor={'#912730'}
+                radiusLineWidth={0}
                 innerBorderColor={'#000000'}
-                backgroundColors={['#F7F9F2', '#E7F0DC']}
+                backgroundColors={['#5CB5B0','#5C9CB4']}
                 fontSize={30}
-                fontFamily={'Arial'}
+                fontFamily={'Lato'}
                 fontStyle={'normal'}
-                textColors={['#071952']}
+                textColors={['#ffffff']}
                 disableInitialAnimation={false}
                 spinDuration={0.5}  //スピン速度
                 innerRadius={2}
@@ -141,7 +141,7 @@ export default function Home() {
             />
             </button>
             </div>
-        <div className="text-4xl flex justify-center">RESULT:{result}</div>
+        <div className="text-4xl flex justify-center">{result}</div>
 
         {/* BUTTON */}
         <div>
