@@ -105,9 +105,8 @@ export default function Home() {
     <main  className=" text-white">
         <div className="relative h-screen w-screen">
             {/* 背景画像や色 */}
-            {/* <div className="absolute top-0 left-0 h-full w-full bg-cover bg-center bg-ascent filter blur-sm overflow-hidden brightness-50 duration-300"></div>  */}
-            <Background mapname={result} />
-            <div className="relative z-1 p-8 filter-none">
+            <Background mapname={result} ismustSpin={mustSpin} />
+            <div className="relative z-2 p-8 filter-none">
 
         <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
         <button onClick={()=>roulettebtn()}>[ROULETTE START]</button>

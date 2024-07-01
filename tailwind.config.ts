@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'default':  "url('/images/Default/defulatIMG.png')",
+        'result':  "url('/images/Default/DefaultIMG.webp')",
         'ascent':   "url('/images/Result/ASCENT.png')",
         'bind':     "url('/images/Result/BIND.png')",
         'breeze':   "url('/images/Result/BREEZE.png')",
