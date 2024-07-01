@@ -61,7 +61,7 @@ export default function Home() {
     const namesplit     = 'split';
     const namesunset    = 'sunset';
 
-const roulettewarn = "データを一つ以上いれてください！";
+    const roulettewarn = "データを一つ以上いれてください！";
 
     function handler(state: boolean, setState: React.Dispatch<React.SetStateAction<boolean>>, mapname: string) {
         setState((state) => {
@@ -91,22 +91,28 @@ const roulettewarn = "データを一つ以上いれてください！";
     //ルーレットスピン開始
     const [mustSpin, setmustSpin] = useState<boolean>(false);
     function roulettebtn () {
-        setmustSpin(true);
-        setprizenumber((prizenumber) => {
-            //prizenumber = data.length -1;
-             prizenumber = Math.round(Math.random() * (data.length-1));
-            return prizenumber;
-        });
-
+        if(!mustSpin) {
+            setmustSpin(true);
+            setprizenumber((prizenumber) => {
+                //prizenumber = data.length -1;
+                 prizenumber = Math.round(Math.random() * (data.length-1));
+                return prizenumber;
+            });
+        }
     };
 
     return (
-    <main>
-        <Background result={''} />
+    <main  className=" text-white">
+        <div className="relative h-screen w-screen">
+            {/* 背景画像や色 */}
+            {/* <div className="absolute top-0 left-0 h-full w-full bg-cover bg-center bg-ascent filter blur-sm overflow-hidden brightness-50 duration-300"></div>  */}
+            <Background mapname={result} />
+            <div className="relative z-1 p-8 filter-none">
+
         <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
         <button onClick={()=>roulettebtn()}>[ROULETTE START]</button>
             <div className='flex justify-center'>
-            <button onClick={()=>roulettebtn()} className='transition duration-300 active:scale-90 hover:scale-105'>
+            <button onClick={()=>roulettebtn()} className={mustSpin ? '' : 'transition duration-300 active:scale-90 hover:scale-105'}>
             <Wheel
                 mustStartSpinning={mustSpin}
                 //pointerProps={ {src:pointerimg.src}}
@@ -141,54 +147,56 @@ const roulettewarn = "データを一つ以上いれてください！";
         {/* BUTTON */}
         <div>
             {/* ASCENT */}
-            <button onClick={()=>handler(isascent, setAscent, nameascent)}>
-                <Button bool={isascent} image={imgascent}/>
+            <button disabled={mustSpin} onClick={()=>handler(isascent, setAscent, nameascent)}>
+                <Button bool={isascent} image={imgascent} ismustSpin={mustSpin}/>
             </button>
 
             {/* BIND */}
-            <button onClick={()=>handler(isbind, setBind, namebind)}>
-                <Button bool={isbind} image={imgbind}/>
+            <button disabled={mustSpin} onClick={()=>handler(isbind, setBind, namebind)}>
+                <Button bool={isbind} image={imgbind} ismustSpin={mustSpin}/>
             </button>
 
             {/* BREEZE */}
-            <button onClick={()=>handler(isbreeze, setbreeze, namebreeze)}>
-                <Button bool={isbreeze} image={imgbreeze}/>
+            <button disabled={mustSpin} onClick={()=>handler(isbreeze, setbreeze, namebreeze)}>
+                <Button bool={isbreeze} image={imgbreeze} ismustSpin={mustSpin}/>
             </button>
 
             {/* FRACTURE */}
-            <button onClick={()=>handler(isfracture, setFracture, namefracture)}>
-                <Button bool={isfracture} image={imgfracture}/>
+            <button disabled={mustSpin} onClick={()=>handler(isfracture, setFracture, namefracture)}>
+                <Button bool={isfracture} image={imgfracture} ismustSpin={mustSpin}/>
             </button>
 
             {/* HAVEN */}
-            <button onClick={()=>handler(ishaven, setHaven, namehaven)}>
-                <Button bool={ishaven} image={imghaven}/>
+            <button disabled={mustSpin} onClick={()=>handler(ishaven, setHaven, namehaven)}>
+                <Button bool={ishaven} image={imghaven} ismustSpin={mustSpin}/>
             </button>
 
             {/* ICEBOX */}
-            <button onClick={()=>handler(isicebox, setIcebox, nameicebox)}>
-                <Button bool={isicebox} image={imgicebox}/>
+            <button disabled={mustSpin} onClick={()=>handler(isicebox, setIcebox, nameicebox)}>
+                <Button bool={isicebox} image={imgicebox} ismustSpin={mustSpin}/>
             </button>
 
             {/* LOTUS */}
-            <button onClick={()=>handler(islotus, setLotus, namelotus)}>
-                <Button bool={islotus} image={imglotus}/>
+            <button disabled={mustSpin} onClick={()=>handler(islotus, setLotus, namelotus)}>
+                <Button bool={islotus} image={imglotus} ismustSpin={mustSpin}/>
             </button>
 
             {/* PEARL */}
-            <button onClick={()=>handler(ispearl, setPearl, namepearl)}>
-                <Button bool={ispearl} image={imgpearl}/>
+            <button disabled={mustSpin} onClick={()=>handler(ispearl, setPearl, namepearl)}>
+                <Button bool={ispearl} image={imgpearl} ismustSpin={mustSpin}/>
             </button>
 
             {/* SPLIT */}
-            <button onClick={()=>handler(issplit, setSplit, namesplit)}>
-                <Button bool={issplit} image={imgsplit}/>
+            <button disabled={mustSpin} onClick={()=>handler(issplit, setSplit, namesplit)}>
+                <Button bool={issplit} image={imgsplit} ismustSpin={mustSpin}/>
             </button>
 
             {/* SUNSET */}
-            <button onClick={()=>handler(issunset, setSunset, namesunset)}>
-                <Button bool={issunset} image={imgsunset}/>
+            <button disabled={mustSpin} onClick={()=>handler(issunset, setSunset, namesunset)}>
+                <Button bool={issunset} image={imgsunset} ismustSpin={mustSpin}/>
         </button>
+    </div>
+    </div>
     </div>
     </main>
 );}
