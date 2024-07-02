@@ -89,7 +89,6 @@ export default function Home() {
         });
     }
 
-
     //ルーレットスピン開始
     const [mustSpin, setmustSpin] = useState<boolean>(false);
     function roulettebtn () {
