@@ -13,7 +13,8 @@
     "next": "14.2.4",
     "react": "^18",
     "react-custom-roulette": "^1.4.1",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hook-roulette": "^0.0.10"
   },
   "devDependencies": {
     "@types/node": "^20",

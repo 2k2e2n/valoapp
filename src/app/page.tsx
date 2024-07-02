@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import router from "next/router";
-import { Wheel } from 'react-custom-roulette'
+
 import Image from "next/image";
 /*
 import imgascent    from "@/../public/images/Button/ASCENT.webp"
@@ -31,6 +31,10 @@ const data = [
     { option: '1', style: { backgroundColor: 'white' } },
     { option: '2' },
 ]
+
+
+import { Roulette, useRoulette } from 'react-hook-roulette';
+
 
 export default function Home() {
 /*
@@ -112,9 +116,24 @@ export default function Home() {
 
 const[mustSpin, setmustSpin]= useState<boolean>(false);
 
+const items = [
+    { name: "label1" },
+    { name: "label2" },
+    { name: "label3" },
+    { name: "label4" },
+    { name: "label5" },
+    { name: "label6" },
+];
+const { roulette, onStart, onStop, result } = useRoulette({ items });
+
+
+
+
 function handler() {
     console.log("pushedbtn!");
 }
+
+
     return (
     <main  className=" text-white">
 
@@ -127,13 +146,7 @@ function handler() {
         height={113}
         />
 
-        <Wheel
-            mustStartSpinning={mustSpin}
-            prizeNumber={3}
-            data={data}
-            backgroundColors={['#3e3e3e', '#df3428']}
-            textColors={['#ffffff']}
-        />
+
 
 
 
@@ -146,6 +159,13 @@ function handler() {
         <button onClick={()=>handler()}>
             <Button name={'BIND'}/>
         </button>
+
+		<div>
+			<Roulette roulette={roulette}/>
+			<button type="button" onClick={onStart}>Start</button>
+			<button type="button" onClick={onStop}>Stop</button>
+			{result && <p>Result: {result}</p>}
+		</div>
 
     </main>
 );}
