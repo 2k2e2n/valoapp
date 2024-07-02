@@ -106,22 +106,35 @@ export default function Home() {
 
 
 
-let data = [
-    { option: 'ASCENT'  },
-    { option: 'BIND'    },
-    { option: 'BREEZE'  },
-    { option: 'FRACTURE'},
-    { option: 'HAVEN'   },
-    { option: 'ICEBOX'  },
-    { option: 'LOTUS'   },
-    { option: 'PEARL'   },
-    { option: 'SPLIT'   },
-    { option: 'SUNSET'  },
-]
+let   [data,        setdata]     = useState([
+    { option: 'ASCENT'   },
+    { option: 'BIND'     },
+    { option: 'BREEZE'   },
+    { option: 'FRACTURE' },
+    { option: 'HAVEN'    },
+    { option: 'ICEBOX'   },
+    { option: 'LOTUS'    },
+    { option: 'PEARL'    },
+    { option: 'SPLIT'    },
+    { option: 'SUNSET'   },
+]);
 
-//ボタンのリンク
-function handler() {
-    console.log("pushedbtn!");
+//マップボタンクリック
+function handler(mapname: string) {
+    setdata(() => {
+        if(data.some(item => item.option === mapname) ){ //配列から削除
+            if(data.length >= 3) {
+                console.log(`${mapname},を削除`);
+                data = data.filter(item => item.option !== mapname);
+            }
+        } else {                   //配列に追加
+            console.log(`${mapname},を追加`);
+            data.push({ option: `${mapname}`});
+        }
+        return data;
+    });
+    console.warn(data);
+
 }
 
 
@@ -191,12 +204,35 @@ function endroulette (){
         />
                 <div>{resultstr}</div>
 
-        <button onClick={()=>handler()}
-              className="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
-              <span className="mx-auto text-black">ASCENT</span>
+        <button onClick={()=>handler('ASCENT')}>
+            <Button name={'ASCENT'}/>
         </button>
-        <button onClick={()=>handler()}>
+        <button onClick={()=>handler('BIND')}>
             <Button name={'BIND'}/>
+        </button>
+        <button onClick={()=>handler('BREEZE')}>
+            <Button name={'BREEZE'}/>
+        </button>
+        <button onClick={()=>handler('FRACTURE')}>
+            <Button name={'FRACTURE'}/>
+        </button>
+        <button onClick={()=>handler('HAVEN')}>
+            <Button name={'HAVEN'}/>
+        </button>
+        <button onClick={()=>handler('ICEBOX')}>
+            <Button name={'ICEBOX'}/>
+        </button>
+        <button onClick={()=>handler('LOTUS')}>
+            <Button name={'LOTUS'}/>
+        </button>
+        <button onClick={()=>handler('PEARL')}>
+            <Button name={'PEARL'}/>
+        </button>
+        <button onClick={()=>handler('SPLIT')}>
+            <Button name={'SPLIT'}/>
+        </button>
+        <button onClick={()=>handler('SUNSET')}>
+            <Button name={'SUNSET'}/>
         </button>
 
 
