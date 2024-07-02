@@ -20,7 +20,7 @@ import pointerimg from "@/../public/images/Default/pointer_cursor.png"
 import Background from '@/components/Background';
 import Header from '@/components/Header';
 */
-
+import { Wheel } from 'react-custom-roulette'
 import imgascent    from "@/../public/images/Button/ASCENT.webp"
 import "./globals.css";
 import Button from "@/components/Button";
@@ -116,18 +116,12 @@ export default function Home() {
 
 const[mustSpin, setmustSpin]= useState<boolean>(false);
 
-const items = [
-    { name: "label1" },
-    { name: "label2" },
-    { name: "label3" },
-    { name: "label4" },
-    { name: "label5" },
-    { name: "label6" },
-];
-const { roulette, onStart, onStop, result } = useRoulette({ items });
 
-
-
+const data = [
+    { option: '0', style: { backgroundColor: 'green', textColor: 'black' } },
+    { option: '1', style: { backgroundColor: 'white' } },
+    { option: '2' },
+]
 
 function handler() {
     console.log("pushedbtn!");
@@ -160,12 +154,13 @@ function handler() {
             <Button name={'BIND'}/>
         </button>
 
-		<div>
-			<Roulette roulette={roulette}/>
-			<button type="button" onClick={onStart}>Start</button>
-			<button type="button" onClick={onStop}>Stop</button>
-			{result && <p>Result: {result}</p>}
-		</div>
+        <Wheel
+            mustStartSpinning={mustSpin}
+            prizeNumber={3}
+            data={data}
+            backgroundColors={['#3e3e3e', '#df3428']}
+            textColors={['#ffffff']}
+            />
 
     </main>
 );}
