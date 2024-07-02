@@ -1,5 +1,7 @@
+
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+
 
 type Props = {
     bool: boolean;   //変数の型を定義する
@@ -8,7 +10,7 @@ type Props = {
   }
 
 
-  const Button: React.FC<Props>  = ({bool, image, ismustSpin}) => {
+  const Buttontest: React.FC<Props>  = ({bool, image, ismustSpin}) => {
 
 return (
     <div>
@@ -26,7 +28,7 @@ return (
     </div>
 )}
 
-export default Button;
+export default Buttontest;
 
 
 

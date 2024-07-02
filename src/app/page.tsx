@@ -114,7 +114,7 @@ export default function Home() {
         width={200}
         height={113}
         />
-    <Button>Button</Button>;
+    <Button color="blue">color blue</Button>
     </div>
     </main>
 );}
