@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import router from "next/router";
 import Button from "@/components/Button"
 import { Wheel } from 'react-custom-roulette'
-
+import Image from "next/image";
 /*
 import imgascent    from "@/../public/images/Button/ASCENT.webp"
 import imgbind      from "@/../public/images/Button/BIND.webp"
@@ -22,7 +22,7 @@ import Background from '@/components/Background';
 import Header from '@/components/Header';
 */
 
-
+import imgascent    from "@/../public/images/Button/ASCENT.webp"
 
 
 
@@ -108,6 +108,14 @@ export default function Home() {
     <main  className=" text-white">
 
         <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
+        <div>
+        <Image
+        src={imgascent}
+        alt="猫は最高に可愛い"
+        width={200}
+        height={113}
+        />
 
+    </div>
     </main>
 );}
