@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import router from "next/router";
-import Button from "@/components/Button"
 import { Wheel } from 'react-custom-roulette'
 import Image from "next/image";
 /*
@@ -23,7 +22,7 @@ import Header from '@/components/Header';
 */
 
 import imgascent    from "@/../public/images/Button/ASCENT.webp"
-
+import { Button } from "@material-tailwind/react";
 
 
 
@@ -115,7 +114,7 @@ export default function Home() {
         width={200}
         height={113}
         />
-
+    <Button>Button</Button>;
     </div>
     </main>
 );}
