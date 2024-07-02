@@ -23,8 +23,14 @@ import Header from '@/components/Header';
 
 import imgascent    from "@/../public/images/Button/ASCENT.webp"
 import "./globals.css";
-import Button from "@/components/Button"
+import Button from "@/components/Button";
+import React from 'react';
 
+const data = [
+    { option: '0', style: { backgroundColor: 'green', textColor: 'black' } },
+    { option: '1', style: { backgroundColor: 'white' } },
+    { option: '2' },
+]
 
 export default function Home() {
 /*
@@ -104,7 +110,7 @@ export default function Home() {
     };
 */
 
-
+const[mustSpin, setmustSpin]= useState<boolean>(false);
 
 function handler() {
     console.log("pushedbtn!");
@@ -116,12 +122,21 @@ function handler() {
         <div>
         <Image
         src={imgascent}
-        alt="猫は最高に可愛い"
+        alt=""
         width={200}
         height={113}
         />
 
-    
+        <Wheel
+            mustStartSpinning={mustSpin}
+            prizeNumber={3}
+            data={data}
+            backgroundColors={['#3e3e3e', '#df3428']}
+            textColors={['#ffffff']}
+        />
+
+
+
     </div>
         <button onClick={()=>handler()}
               className="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
