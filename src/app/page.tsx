@@ -23,6 +23,7 @@ import Header from '@/components/Header';
 
 import imgascent    from "@/../public/images/Button/ASCENT.webp"
 import "./globals.css";
+import Button from "@/components/Button"
 
 
 export default function Home() {
@@ -102,6 +103,12 @@ export default function Home() {
         }
     };
 */
+
+
+
+function handler() {
+    console.log("pushedbtn!");
+}
     return (
     <main  className=" text-white">
 
@@ -116,10 +123,14 @@ export default function Home() {
 
     
     </div>
-    <button
+        <button onClick={()=>handler()}
               className="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
               <span className="mx-auto text-black">ASCENT</span>
 
-            </button>
+        </button>
+        <button onClick={()=>handler()}>
+            <Button name={'BIND'}/>
+        </button>
+
     </main>
 );}
