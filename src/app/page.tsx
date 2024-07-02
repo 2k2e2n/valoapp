@@ -108,7 +108,7 @@ export default function Home() {
             {/* 背景画像や色 */}
             <Background mapname={result} ismustSpin={mustSpin} />
             <div className="relative filter-none">
-        <Header />
+ {/*        <Header />*/}
         <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
         <button onClick={()=>roulettebtn()}>[ROULETTE START]</button>
             <div className='flex justify-center'>
