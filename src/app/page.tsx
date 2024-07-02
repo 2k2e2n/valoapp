@@ -36,7 +36,7 @@ const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Whee
 
 
 export default function Home() {
-
+  
 /*
     const [isascent,    setAscent]   = useState<boolean>(true);
     const [isbind,      setBind]     = useState<boolean>(true);
@@ -107,16 +107,16 @@ export default function Home() {
 
 
 let data = [
-    { option: 'ascent'   },
-    { option: 'bind'     },
-    { option: 'breeze'   },
-    { option: 'fracture' },
-    { option: 'haven'    },
-    { option: 'icebox'   },
-    { option: 'lotus'    },
-    { option: 'pearl'    },
-    { option: 'split'    },
-    { option: 'sunset'   },
+    { option: 'ASCENT'  },
+    { option: 'BIND'    },
+    { option: 'BREEZE'  },
+    { option: 'FRACTURE'},
+    { option: 'HAVEN'   },
+    { option: 'ICEBOX'  },
+    { option: 'LOTUS'   },
+    { option: 'PEARL'   },
+    { option: 'SPLIT'   },
+    { option: 'SUNSET'  },
 ]
 
 //ボタンのリンク
@@ -124,18 +124,32 @@ function handler() {
     console.log("pushedbtn!");
 }
 
+
+const [resultnum, setresultnum] = useState<number>(0);
+const [resultstr, setresultstr] = useState<string>();
 //ルーレットスタート
 const[mustSpin, setmustSpin]= useState<boolean>(false);
 function startroulette() {
     setmustSpin((mustSpin) => {
-        return mustSpin = true;
+        mustSpin = true;
+        return mustSpin;
+    });
+    setresultnum((resultnum) => {
+        resultnum = Math.round(Math.random() * (data.length-1));
+        return resultnum;
+    });
+}
+function endroulette (){
+    setresultstr((resultstr) => {
+        resultstr = data[`${resultnum}`].option;
+        return resultstr;
     })
+
 }
 
 
     return (
     <main  className=" text-white">
-
         <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
         <div>
         <Image
@@ -145,27 +159,36 @@ function startroulette() {
         height={113}
         />
 
-
     </div>
         <button onClick={()=>handler()}
               className="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
               <span className="mx-auto text-black">ASCENT</span>
-
         </button>
         <button onClick={()=>handler()}>
             <Button name={'BIND'}/>
         </button>
 
         <Wheel
-            mustStartSpinning={mustSpin}
-            prizeNumber={3}
-            data={data}
-            backgroundColors={['#3e3e3e', '#df3428']}
-            textColors={['#ffffff']}
-            spinDuration={0.5}  //スピン速度
+                mustStartSpinning={mustSpin}
+                prizeNumber={resultnum}
+                data={data}
+                outerBorderWidth={0}
+                innerBorderWidth={0}
+                radiusLineColor={'#912730'}
+                radiusLineWidth={0}
+                innerBorderColor={'#000000'}
+                backgroundColors={['#5CB5B0','#5C9CB4']}
+                fontSize={30}
+                fontFamily={'Lato'}
+                fontStyle={'normal'}
+                textColors={['#ffffff']}
+                disableInitialAnimation={false}
+                spinDuration={0.5}  //スピン速度
+                innerRadius={4}
 
             onStopSpinning={() => {
                 setmustSpin((mustSpin) => {
+                    endroulette();
                     return mustSpin = false;
                 })
             }}
@@ -175,5 +198,6 @@ function startroulette() {
             <Button name={'ROULETTE start!'}/>
         </button>
 
+        <div>{resultstr}</div>
     </main>
 );}
