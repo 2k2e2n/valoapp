@@ -160,12 +160,8 @@ function endroulette (){
         />
 
     </div>
-        <button onClick={()=>handler()}
-              className="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
-              <span className="mx-auto text-black">ASCENT</span>
-        </button>
-        <button onClick={()=>handler()}>
-            <Button name={'BIND'}/>
+    <button onClick={()=>startroulette()}>
+            <Button name={'ROULETTE start!'}/>
         </button>
 
         <Wheel
@@ -193,11 +189,17 @@ function endroulette (){
                 })
             }}
         />
+                <div>{resultstr}</div>
 
-        <button onClick={()=>startroulette()}>
-            <Button name={'ROULETTE start!'}/>
+        <button onClick={()=>handler()}
+              className="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
+              <span className="mx-auto text-black">ASCENT</span>
+        </button>
+        <button onClick={()=>handler()}>
+            <Button name={'BIND'}/>
         </button>
 
-        <div>{resultstr}</div>
+
+
     </main>
 );}
