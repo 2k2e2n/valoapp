@@ -20,7 +20,7 @@ import pointerimg from "@/../public/images/Default/pointer_cursor.png"
 import Background from '@/components/Background';
 import Header from '@/components/Header';
 */
-import { Wheel } from 'react-custom-roulette'
+
 import imgascent    from "@/../public/images/Button/ASCENT.webp"
 import "./globals.css";
 import Button from "@/components/Button";
@@ -32,8 +32,11 @@ const data = [
     { option: '2' },
 ]
 
+import dynamic from 'next/dynamic'
+const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), {
+    ssr: false
+  })
 
-import { Roulette, useRoulette } from 'react-hook-roulette';
 
 
 export default function Home() {
