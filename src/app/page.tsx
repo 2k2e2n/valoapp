@@ -26,11 +26,7 @@ import "./globals.css";
 import Button from "@/components/Button";
 import React from 'react';
 
-const data = [
-    { option: '0', style: { backgroundColor: 'green', textColor: 'black' } },
-    { option: '1', style: { backgroundColor: 'white' } },
-    { option: '2' },
-]
+
 
 import dynamic from 'next/dynamic'
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), {
@@ -40,6 +36,7 @@ const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Whee
 
 
 export default function Home() {
+
 /*
     const [isascent,    setAscent]   = useState<boolean>(true);
     const [isbind,      setBind]     = useState<boolean>(true);
@@ -53,18 +50,7 @@ export default function Home() {
     const [issunset,    setSunset]   = useState<boolean>(true);
     const [prizenumber, setprizenumber] = useState<number>(0);
     const [result, setresult] = useState<string>("result");
-    let   [data,        setdata]     = useState([
-        { option: 'ascent'   },
-        { option: 'bind'     },
-        { option: 'breeze'   },
-        { option: 'fracture' },
-        { option: 'haven'    },
-        { option: 'icebox'   },
-        { option: 'lotus'    },
-        { option: 'pearl'    },
-        { option: 'split'    },
-        { option: 'sunset'   },
-    ]);
+
 
     const nameascent    = 'ascent';
     const namebind      = 'bind';
@@ -117,17 +103,33 @@ export default function Home() {
     };
 */
 
-const[mustSpin, setmustSpin]= useState<boolean>(false);
 
 
-const data = [
-    { option: '0', style: { backgroundColor: 'green', textColor: 'black' } },
-    { option: '1', style: { backgroundColor: 'white' } },
-    { option: '2' },
+
+let data = [
+    { option: 'ascent'   },
+    { option: 'bind'     },
+    { option: 'breeze'   },
+    { option: 'fracture' },
+    { option: 'haven'    },
+    { option: 'icebox'   },
+    { option: 'lotus'    },
+    { option: 'pearl'    },
+    { option: 'split'    },
+    { option: 'sunset'   },
 ]
 
+//ボタンのリンク
 function handler() {
     console.log("pushedbtn!");
+}
+
+//ルーレットスタート
+const[mustSpin, setmustSpin]= useState<boolean>(false);
+function startroulette() {
+    setmustSpin((mustSpin) => {
+        return mustSpin = true;
+    })
 }
 
 
@@ -142,9 +144,6 @@ function handler() {
         width={200}
         height={113}
         />
-
-
-
 
 
     </div>
@@ -163,7 +162,18 @@ function handler() {
             data={data}
             backgroundColors={['#3e3e3e', '#df3428']}
             textColors={['#ffffff']}
-            />
+            spinDuration={0.5}  //スピン速度
+
+            onStopSpinning={() => {
+                setmustSpin((mustSpin) => {
+                    return mustSpin = false;
+                })
+            }}
+        />
+
+        <button onClick={()=>startroulette()}>
+            <Button name={'ROULETTE start!'}/>
+        </button>
 
     </main>
 );}
