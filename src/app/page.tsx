@@ -22,8 +22,7 @@ import Header from '@/components/Header';
 */
 
 import imgascent    from "@/../public/images/Button/ASCENT.webp"
-import { Button } from "@material-tailwind/react";
-
+import "./globals.css";
 
 
 export default function Home() {
@@ -114,7 +113,13 @@ export default function Home() {
         width={200}
         height={113}
         />
-    <Button color="blue">color blue</Button>
+
+    
     </div>
+    <button
+              className="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
+              <span className="mx-auto text-black">ASCENT</span>
+
+            </button>
     </main>
 );}
