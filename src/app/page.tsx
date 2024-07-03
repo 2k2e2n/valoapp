@@ -164,8 +164,7 @@ function handler(mapname: string) {
             }
         } else {                   //配列に追加
             console.log(`${mapname},を追加`);
-            //data.push({ option: `${mapname}`});
-            data.push({ option: mapname }); //配列に追加
+            data = data.concat({ option: mapname });    //配列に追加
         }
     return data;
     });
