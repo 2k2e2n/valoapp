@@ -172,16 +172,17 @@ function handler(mapname: string) {
     }
 }
 
-    return (
-    <main  className=" text-white">
+return (
+<main  className=" text-white">
         <div className='z-0'>
         <Background mapname={resultstr} ismustSpin={mustSpin} />
         </div>
-        <div className='z-10 absolute'>
+        <div className='z-10'>
 
-    <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
-    <div className='flex justify-center'>
-    <button onClick={()=>startroulette()} >
+    <div className="text-red-600 text-4xl bg-white z-11">VALORANT ROULETTE ver.2</div>
+<div className='flex justify-center'>
+    <button onClick={()=>startroulette()} className={`duration-200 ${mustSpin ? '' : 'hover:scale-105'}`}>
+
             <Wheel
                     mustStartSpinning={mustSpin}
                     prizeNumber={resultnum}
@@ -210,38 +211,38 @@ function handler(mapname: string) {
     </button >
     </div>
                     <div className='flex justify-center text-6xl'>{resultstr}</div>
-
+<div className='flex justify-center'>
             <button onClick={()=>handler('ASCENT')}>
-                <Button name={'ASCENT'}/>
+                <Button data={data} name={'ASCENT'}/>
             </button>
             <button onClick={()=>handler('BIND')}>
-                <Button name={'BIND'}/>
+                <Button data={data} name={'BIND'}/>
             </button>
             <button onClick={()=>handler('BREEZE')}>
-                <Button name={'BREEZE'}/>
+                <Button data={data} name={'BREEZE'}/>
             </button>
             <button onClick={()=>handler('FRACTURE')}>
-                <Button name={'FRACTURE'}/>
+                <Button data={data} name={'FRACTURE'}/>
             </button>
             <button onClick={()=>handler('HAVEN')}>
-                <Button name={'HAVEN'}/>
+                <Button data={data} name={'HAVEN'}/>
             </button>
             <button onClick={()=>handler('ICEBOX')}>
-                <Button name={'ICEBOX'}/>
+                <Button data={data} name={'ICEBOX'}/>
             </button>
             <button onClick={()=>handler('LOTUS')}>
-                <Button name={'LOTUS'}/>
+                <Button data={data} name={'LOTUS'}/>
             </button>
             <button onClick={()=>handler('PEARL')}>
-                <Button name={'PEARL'}/>
+                <Button data={data} name={'PEARL'}/>
             </button>
             <button onClick={()=>handler('SPLIT')}>
-                <Button name={'SPLIT'}/>
+                <Button data={data} name={'SPLIT'}/>
             </button>
             <button onClick={()=>handler('SUNSET')}>
-                <Button name={'SUNSET'}/>
+                <Button data={data} name={'SUNSET'}/>
             </button>
-
+</div>
 
         </div>
     </main>

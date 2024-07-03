@@ -50,18 +50,20 @@ useEffect(() => {
 
 return (
     <div>
-        <div className={`fixed top-0 left-0 w-full h-screen z-[-1] blur-sm`}>
+        <div className={`duration-200 fixed top-0 left-0 w-full h-screen z-[-1] blur-sm ${ismustSpin ? '' : 'scale-105'}`}>
         <Image
         src={BACKGROUND}
         alt=""
         fill
-        layout={`fill`} objectFit={`cover`}
+        layout={`fill`}
+        //objectFit={`cover`}
         />
         <Image
         src={mapdata}
         alt=""
         fill
-        layout={`fill`} objectFit={`cover`}
+        layout={`fill`}
+        //objectFit={`cover`}
         />
         </div>
 
