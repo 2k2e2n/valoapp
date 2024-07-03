@@ -37,7 +37,12 @@ const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Whee
 
 
 export default function Home() {
-  
+
+    useEffect(() => {
+        setmustSpin((mustSpin)=> {
+            return mustSpin = false;
+        })
+        },[])
 /*
     const [isascent,    setAscent]   = useState<boolean>(true);
     const [isbind,      setBind]     = useState<boolean>(true);
@@ -169,21 +174,8 @@ function handler(mapname: string) {
         <Background mapname={resultstr} ismustSpin={mustSpin} />
         </div>
         <div className='z-10 absolute'>
-        
 
-            <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
-            <div>
-            <Image
-            src={imgascent}
-            alt=""
-            width={200}
-            height={113}
-            />
-
-        </div>
-        <button onClick={()=>startroulette()}>
-                <Button name={'ROULETTE start!'}/>
-            </button>
+    <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
     <div className='flex justify-center'>
     <button onClick={()=>startroulette()} >
             <Wheel

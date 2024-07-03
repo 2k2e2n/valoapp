@@ -16,14 +16,16 @@ const Background: React.FC<Props>  = ({mapname, ismustSpin}) => {
 
 useEffect(() => {
     console.log(`@/../public/images/Result/${mapname}.webp`);
-
+    if(mapname = "ClickRoulette!"){
+        mapname = 'backgroundimg';
+    }
 }, [mapname]); // 依存配列にmapNameを指定
 
 
 return (
     <div >
         {/*プリレンダ*/}
-        <div className={`fixed top-0 left-0 w-full h-screen z-[-1]`}>
+        <div className={`fixed top-0 left-0 w-full h-screen z-[-1] blur-sm duration-300`}>
         <Image
         src={backgroundimg}
         alt=""
@@ -31,7 +33,7 @@ return (
         layout={`fill`} objectFit={`cover`}
         />
         <Image
-        src={`/images/Result/${mapname}.webp`}
+        src={`@../public/images/Result/${mapname}.webp`}
         alt=""
         fill
         layout={`fill`} objectFit={`cover`}
