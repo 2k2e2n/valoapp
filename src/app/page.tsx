@@ -107,65 +107,66 @@ export default function Home() {
 
 
 
-let   [data,        setdata]     = useState([
-    { option: 'ASCENT'   },
-    { option: 'BIND'     },
-    { option: 'BREEZE'   },
-    { option: 'FRACTURE' },
-    { option: 'HAVEN'    },
-    { option: 'ICEBOX'   },
-    { option: 'LOTUS'    },
-    { option: 'PEARL'    },
-    { option: 'SPLIT'    },
-    { option: 'SUNSET'   },
+let   [data,setdata] = useState([
+    { option: 'ASCENT'  },
+    { option: 'BIND'    },
+    { option: 'BREEZE'  },
+    { option: 'FRACTURE'},
+    { option: 'HAVEN'   },
+    { option: 'ICEBOX'  },
+    { option: 'LOTUS'   },
+    { option: 'PEARL'   },
+    { option: 'SPLIT'   },
+    { option: 'SUNSET'  },
 ]);
 
-//マップボタンクリック
-function handler(mapname: string) {
-    setdata(() => {
-        if(data.some(item => item.option === mapname) ){ //配列から削除
-            if(data.length >= 3) {
-                console.log(`${mapname},を削除`);
-                data = data.filter(item => item.option !== mapname);
-            }
-        } else {                   //配列に追加
-            console.log(`${mapname},を追加`);
-            data.push({ option: `${mapname}`});
-        }
-        return data;
-    });
-    console.warn(data);
 
-}
 
 
 const [resultnum, setresultnum] = useState<number>(0);
-const [resultstr, setresultstr] = useState<string>();
+const [resultstr, setresultstr] = useState<string>("ClickRoulette!");
 //ルーレットスタート
 const[mustSpin, setmustSpin]= useState<boolean>(false);
 function startroulette() {
-    setmustSpin((mustSpin) => {
-        mustSpin = true;
-        return mustSpin;
-    });
-    setresultnum((resultnum) => {
-        resultnum = Math.round(Math.random() * (data.length-1));
-        return resultnum;
-    });
+    if(!mustSpin) {
+        setmustSpin((mustSpin) => {
+            mustSpin = true;
+            return mustSpin;
+        });
+        setresultnum((resultnum) => {
+            resultnum = Math.round(Math.random() * (data.length-1));
+            return resultnum;
+        });
+    }
 }
 function endroulette (){
     setresultstr((resultstr) => {
         resultstr = data[`${resultnum}`].option;
         return resultstr;
     })
-
 }
 
+//マップボタンクリック
+function handler(mapname: string) {
+            setdata(() => {
+                if(data.some(item => item.option === mapname) ){ //配列から削除
+                    if(data.length >= 3) {
+                        console.log(`${mapname},を削除`);
+                        data = data.filter(item => item.option !== mapname);
+                    }
+                } else {                   //配列に追加
+                    console.log(`${mapname},を追加`);
+                    data.push({ option: `${mapname}`});
+                }
+                return data;
+            });
+    console.warn(data);
+}
 
     return (
     <main  className=" text-white">
         <div className='z-0'>
-        <Background mapname={`ASCENT`} ismustSpin={mustSpin} />
+        <Background mapname={resultstr} ismustSpin={mustSpin} />
         </div>
         <div className='z-10 absolute'>
         
@@ -183,8 +184,8 @@ function endroulette (){
         <button onClick={()=>startroulette()}>
                 <Button name={'ROULETTE start!'}/>
             </button>
-
-    <button onClick={()=>startroulette()}>
+    <div className='flex justify-center'>
+    <button onClick={()=>startroulette()} >
             <Wheel
                     mustStartSpinning={mustSpin}
                     prizeNumber={resultnum}
@@ -210,8 +211,9 @@ function endroulette (){
                     })
                 }}
             />
-            </button>
-                    <div>{resultstr}</div>
+    </button >
+    </div>
+                    <div className='flex justify-center text-6xl'>{resultstr}</div>
 
             <button onClick={()=>handler('ASCENT')}>
                 <Button name={'ASCENT'}/>
