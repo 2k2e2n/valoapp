@@ -25,7 +25,7 @@ import imgascent    from "@/../public/images/Button/ASCENT.webp"
 import "./globals.css";
 import Button from "@/components/Button";
 import React from 'react';
-
+import Link from 'next/link'
 
 
 import dynamic from 'next/dynamic'
@@ -178,8 +178,11 @@ return (
         <Background mapname={resultstr} ismustSpin={mustSpin} />
         </div>
         <div className='z-10'>
+<div className='bg-white z-11 text-slate-800'>
+    <div className="text-red-600 text-4xl ">VALORANT ROULETTE ver.2    </div>
+        <Link href="https://github.com/2k2e2n/valoapp" target="_blank">Github</Link>
+</div>
 
-    <div className="text-red-600 text-4xl bg-white z-11">VALORANT ROULETTE ver.2</div>
 <div className='flex justify-center'>
     <button onClick={()=>startroulette()} className={`duration-200 ${mustSpin ? '' : 'hover:scale-105'}`}>
 
@@ -190,7 +193,7 @@ return (
                     outerBorderWidth={0}
                     innerBorderWidth={0}
                     radiusLineColor={'#912730'}
-                    radiusLineWidth={0}
+                    radiusLineWidth={0.3}
                     innerBorderColor={'#000000'}
                     backgroundColors={['#5CB5B0','#5C9CB4']}
                     fontSize={30}
@@ -211,7 +214,7 @@ return (
     </button >
     </div>
                     <div className='flex justify-center text-6xl'>{resultstr}</div>
-<div className='flex justify-center'>
+<div className='flex flex-wrap justify-center mx-16'>
             <button onClick={()=>handler('ASCENT')}>
                 <Button data={data} name={'ASCENT'}/>
             </button>

@@ -1,6 +1,5 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import { arrow } from "@material-tailwind/react/types/components/select";
 
 
 type Props = {
@@ -13,8 +12,8 @@ const Button: React.FC<Props>  = ({data, name}) => {
     return (
         <div>
             <div
-                className="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">
-                <span className={`mx-auto  ${data.some(option => option.option === name) ? 'text-black ' : 'text-red-600 bg-blue-400'}`}>
+                className={`font-bold rounded-lg text-2xl mt-6 w-36 h-12 bg-[#ffffff] text-[#0f1923] justify-center duration-200 ${data.some(option => option.option === name) ? 'text-black ' : 'bg-slate-400'}`}>
+                <span className={`mx-auto  ${data.some(option => option.option === name) ? 'text-black ' : ''}`}>
                     {name}
                 </span>
             </div>
