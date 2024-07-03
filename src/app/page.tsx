@@ -164,81 +164,87 @@ function endroulette (){
 
     return (
     <main  className=" text-white">
-        <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
-        <div>
-        <Image
-        src={imgascent}
-        alt=""
-        width={200}
-        height={113}
-        />
+        <div className='z-0'>
+        <Background mapname={`ASCENT`} ismustSpin={mustSpin} />
+        </div>
+        <div className='z-10 absolute'>
+        
 
-    </div>
+            <div className="text-red-600 text-4xl">VALORANT ROULETTE ver.2</div>
+            <div>
+            <Image
+            src={imgascent}
+            alt=""
+            width={200}
+            height={113}
+            />
+
+        </div>
+        <button onClick={()=>startroulette()}>
+                <Button name={'ROULETTE start!'}/>
+            </button>
+
     <button onClick={()=>startroulette()}>
-            <Button name={'ROULETTE start!'}/>
-        </button>
+            <Wheel
+                    mustStartSpinning={mustSpin}
+                    prizeNumber={resultnum}
+                    data={data}
+                    outerBorderWidth={0}
+                    innerBorderWidth={0}
+                    radiusLineColor={'#912730'}
+                    radiusLineWidth={0}
+                    innerBorderColor={'#000000'}
+                    backgroundColors={['#5CB5B0','#5C9CB4']}
+                    fontSize={30}
+                    fontFamily={'Lato'}
+                    fontStyle={'normal'}
+                    textColors={['#ffffff']}
+                    disableInitialAnimation={false}
+                    spinDuration={0.5}  //スピン速度
+                    innerRadius={4}
 
-<button onClick={()=>startroulette()}>
-        <Wheel
-                mustStartSpinning={mustSpin}
-                prizeNumber={resultnum}
-                data={data}
-                outerBorderWidth={0}
-                innerBorderWidth={0}
-                radiusLineColor={'#912730'}
-                radiusLineWidth={0}
-                innerBorderColor={'#000000'}
-                backgroundColors={['#5CB5B0','#5C9CB4']}
-                fontSize={30}
-                fontFamily={'Lato'}
-                fontStyle={'normal'}
-                textColors={['#ffffff']}
-                disableInitialAnimation={false}
-                spinDuration={0.5}  //スピン速度
-                innerRadius={4}
+                onStopSpinning={() => {
+                    setmustSpin((mustSpin) => {
+                        endroulette();
+                        return mustSpin = false;
+                    })
+                }}
+            />
+            </button>
+                    <div>{resultstr}</div>
 
-            onStopSpinning={() => {
-                setmustSpin((mustSpin) => {
-                    endroulette();
-                    return mustSpin = false;
-                })
-            }}
-        />
-</button>
-                <div>{resultstr}</div>
-
-        <button onClick={()=>handler('ASCENT')}>
-            <Button name={'ASCENT'}/>
-        </button>
-        <button onClick={()=>handler('BIND')}>
-            <Button name={'BIND'}/>
-        </button>
-        <button onClick={()=>handler('BREEZE')}>
-            <Button name={'BREEZE'}/>
-        </button>
-        <button onClick={()=>handler('FRACTURE')}>
-            <Button name={'FRACTURE'}/>
-        </button>
-        <button onClick={()=>handler('HAVEN')}>
-            <Button name={'HAVEN'}/>
-        </button>
-        <button onClick={()=>handler('ICEBOX')}>
-            <Button name={'ICEBOX'}/>
-        </button>
-        <button onClick={()=>handler('LOTUS')}>
-            <Button name={'LOTUS'}/>
-        </button>
-        <button onClick={()=>handler('PEARL')}>
-            <Button name={'PEARL'}/>
-        </button>
-        <button onClick={()=>handler('SPLIT')}>
-            <Button name={'SPLIT'}/>
-        </button>
-        <button onClick={()=>handler('SUNSET')}>
-            <Button name={'SUNSET'}/>
-        </button>
+            <button onClick={()=>handler('ASCENT')}>
+                <Button name={'ASCENT'}/>
+            </button>
+            <button onClick={()=>handler('BIND')}>
+                <Button name={'BIND'}/>
+            </button>
+            <button onClick={()=>handler('BREEZE')}>
+                <Button name={'BREEZE'}/>
+            </button>
+            <button onClick={()=>handler('FRACTURE')}>
+                <Button name={'FRACTURE'}/>
+            </button>
+            <button onClick={()=>handler('HAVEN')}>
+                <Button name={'HAVEN'}/>
+            </button>
+            <button onClick={()=>handler('ICEBOX')}>
+                <Button name={'ICEBOX'}/>
+            </button>
+            <button onClick={()=>handler('LOTUS')}>
+                <Button name={'LOTUS'}/>
+            </button>
+            <button onClick={()=>handler('PEARL')}>
+                <Button name={'PEARL'}/>
+            </button>
+            <button onClick={()=>handler('SPLIT')}>
+                <Button name={'SPLIT'}/>
+            </button>
+            <button onClick={()=>handler('SUNSET')}>
+                <Button name={'SUNSET'}/>
+            </button>
 
 
-
+        </div>
     </main>
 );}
