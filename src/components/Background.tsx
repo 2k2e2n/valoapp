@@ -32,7 +32,7 @@ useEffect(() => {
     }
 
     setmapdata((mapdata) => {
-        if(mapname === 'ASCNET'     ) {mapdata = ASCENT};
+        if(mapname === 'ASCENT'     ) {mapdata = ASCENT};
         if(mapname === 'BIND'       ) {mapdata = BIND};
         if(mapname === 'BREEZE'     ) {mapdata = BREEZE};
         if(mapname === 'FRACTURE'   ) {mapdata = FRACTURE};
