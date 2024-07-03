@@ -3,8 +3,18 @@ import React, { useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { Result } from "postcss";
 
-import backgroundimg from "@/../public/images/Background/Wallpaper.webp";
-import testimg from '@/../public/images/Result/ASCENT.webp';
+import BACKGROUND    from "@/../public/images/Background/Wallpaper.webp";
+import ASCENT        from '@/../public/images/Result/ASCENT.webp';
+import BIND          from "@/../public/images/Result/BIND.webp"
+import BREEZE        from "@/../public/images/Result/BREEZE.webp"
+import FRACTURE      from "@/../public/images/Result/FRACTURE.webp"
+import HAVEN         from "@/../public/images/Result/HAVEN.webp"
+import ICEBOX        from "@/../public/images/Result/ICEBOX.webp"
+import LOTUS         from "@/../public/images/Result/LOTUS.webp"
+import PEARL         from "@/../public/images/Result/PEARL.webp"
+import SPLIT         from "@/../public/images/Result/SPLIT.webp"
+import SUNSET        from "@/../public/images/Result/SUNSET.webp"
+
 
 type Props = {
     mapname: string;
@@ -14,28 +24,41 @@ type Props = {
 
 const Background: React.FC<Props>  = ({mapname, ismustSpin}) => {
 
-
+const [mapdata, setmapdata] = useState<StaticImageData>(BACKGROUND)
 useEffect(() => {
-    console.log(`@/../public/images/Result/${mapname}.webp`);
-    if(mapname = "ClickRoulette!"){
+    console.log(`${mapname}`);
+    if(mapname === "ClickRoulette!"){
         mapname = 'backgroundimg';
     }
+
+    setmapdata((mapdata) => {
+        if(mapname === 'ASCNET'     ) {mapdata = ASCENT};
+        if(mapname === 'BIND'       ) {mapdata = BIND};
+        if(mapname === 'BREEZE'     ) {mapdata = BREEZE};
+        if(mapname === 'FRACTURE'   ) {mapdata = FRACTURE};
+        if(mapname === 'HAVEN'      ) {mapdata = HAVEN};
+        if(mapname === 'ICEBOX'     ) {mapdata = ICEBOX};
+        if(mapname === 'LOTUS'      ) {mapdata = LOTUS};
+        if(mapname === 'PEARL'      ) {mapdata = PEARL};
+        if(mapname === 'SPLIT'      ) {mapdata = SPLIT};
+        if(mapname === 'SUNSET'     ) {mapdata = SUNSET};
+        return mapdata;
+    })
+
 }, [mapname]); // 依存配列にmapNameを指定
 
 
 return (
-    <div >
-        {/*プリレンダ*/}
-        <div className={`fixed top-0 left-0 w-full h-screen z-[-1] blur-sm duration-300`}>
+    <div>
+        <div className={`fixed top-0 left-0 w-full h-screen z-[-1] blur-sm`}>
         <Image
-        src={backgroundimg}
+        src={BACKGROUND}
         alt=""
         fill
         layout={`fill`} objectFit={`cover`}
         />
         <Image
-        //src={`@../public/images/Result/${mapname}.webp`}
-        src={testimg}
+        src={mapdata}
         alt=""
         fill
         layout={`fill`} objectFit={`cover`}
@@ -50,4 +73,3 @@ return (
 )}
 
 export default Background;
-//
