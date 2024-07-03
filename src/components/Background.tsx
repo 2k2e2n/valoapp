@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { Result } from "postcss";
 
-import backgroundimg from "@/../public/images/Background/Wallpaper.webp"
+import backgroundimg from "@/../public/images/Background/Wallpaper.webp";
+import testimg from '@/../public/images/Result/ASCENT.webp';
 
 type Props = {
     mapname: string;
@@ -33,7 +34,8 @@ return (
         layout={`fill`} objectFit={`cover`}
         />
         <Image
-        src={`@../public/images/Result/${mapname}.webp`}
+        //src={`@../public/images/Result/${mapname}.webp`}
+        src={testimg}
         alt=""
         fill
         layout={`fill`} objectFit={`cover`}
