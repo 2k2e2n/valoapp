@@ -29,6 +29,7 @@ import React from 'react';
 
 
 import dynamic from 'next/dynamic'
+import Background from '@/components/Background';
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), {
     ssr: false
   })
@@ -177,6 +178,7 @@ function endroulette (){
             <Button name={'ROULETTE start!'}/>
         </button>
 
+<button onClick={()=>startroulette()}>
         <Wheel
                 mustStartSpinning={mustSpin}
                 prizeNumber={resultnum}
@@ -202,6 +204,7 @@ function endroulette (){
                 })
             }}
         />
+</button>
                 <div>{resultstr}</div>
 
         <button onClick={()=>handler('ASCENT')}>
