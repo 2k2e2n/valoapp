@@ -151,21 +151,26 @@ function endroulette (){
     })
 }
 
+
+
 //マップボタンクリック
 function handler(mapname: string) {
-            setdata(() => {
-                if(data.some(item => item.option === mapname) ){ //配列から削除
-                    if(data.length >= 3) {
-                        console.log(`${mapname},を削除`);
-                        data = data.filter(item => item.option !== mapname);
-                    }
-                } else {                   //配列に追加
-                    console.log(`${mapname},を追加`);
-                    data.push({ option: `${mapname}`});
-                }
-                return data;
-            });
-    console.warn(data);
+    if(!mustSpin) {
+    setdata(() => {
+        if(data.some(item => item.option === mapname) ){ //配列から削除
+            if(data.length >= 3) {
+                console.log(`${mapname},を削除`);
+                    data = data.filter(item => item.option !== mapname);
+            }
+        } else {                   //配列に追加
+            console.log(`${mapname},を追加`);
+            //data.push({ option: `${mapname}`});
+            data.push({ option: mapname }); //配列に追加
+        }
+    return data;
+    });
+    console.error(data);
+    }
 }
 
     return (
