@@ -121,7 +121,7 @@ return (
 </div>
 
 <div className='flex justify-center'>
-    <button onClick={()=>startroulette()} className={`duration-200 ${mustSpin ? '' : 'hover:scale-95'}`}>
+    <button onClick={()=>startroulette()} className={`scale-95 duration-200 ${mustSpin ? '' : 'hover:scale-100'}`}>
 
 
 
