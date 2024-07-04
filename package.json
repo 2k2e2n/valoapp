@@ -22,6 +22,7 @@
     "react-custom-roulette": "^1.4.1",
     "react-dom": "^18",
     "react-hook-roulette": "^0.0.10",
+    "react-hot-toast": "^2.4.1",
     "react-type-animation": "^3.2.0"
   },
   "devDependencies": {

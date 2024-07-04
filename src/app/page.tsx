@@ -21,6 +21,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { grey } from '@mui/material/colors';
 import Card from '@mui/joy/Card';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), {
@@ -86,6 +87,8 @@ function handler(mapname: string) {
             if(data.length >= 3) {
                 console.log(`${mapname},を削除`);
                     data = data.filter(item => item.option !== mapname);
+            } else {
+                toast.error("Select 2 or more maps");
             }
         } else {                   //配列に追加
             console.log(`${mapname},を追加`);
@@ -101,6 +104,7 @@ function handler(mapname: string) {
 
 return (
 <main  className=" text-white">
+<div><Toaster/></div>
         <div className='z-0'>
         <Background mapname={resultstr} ismustSpin={mustSpin} />
         </div>
@@ -121,7 +125,7 @@ return (
 </div>
 
 <div className='flex justify-center'>
-    <button onClick={()=>startroulette()} className={`scale-95 duration-200 ${mustSpin ? '' : 'hover:scale-100'}`}>
+    <button onClick={()=>startroulette()} className={`scale-95 duration-200 ${mustSpin ? 'scale-95' : 'hover:scale-100'}`}>
 
 
 
