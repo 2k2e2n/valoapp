@@ -192,10 +192,10 @@ return (
                     data={data}
                     outerBorderWidth={0}
                     innerBorderWidth={0}
-                    radiusLineColor={'#912730'}
+                    radiusLineColor={'#2962FF'}
                     radiusLineWidth={0.3}
                     innerBorderColor={'#000000'}
-                    backgroundColors={['#5CB5B0','#5C9CB4']}
+                    backgroundColors={['#004D40']}
                     fontSize={30}
                     fontFamily={'Lato'}
                     fontStyle={'normal'}
