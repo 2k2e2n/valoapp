@@ -1,65 +1,53 @@
-## Description
- 
-DescriptionDescriptionDescription
-DescriptionDescriptionDescription
-DescriptionDescriptionDescription
- 
-***DEMO:***
- 
-![Demo](https://image-url.gif)
- 
+[CLick here to open page!](https://github.com/2k2e2n/valoapp)
+
+# VALORANT ROULETTE OULINE ver.2
+
+
+
+Remake VALORANT map roulette using REACT!
+
+## HOW TO USE
+
+1. select exclusion map
+
+2. Click Roulette!
+
+3. show Result
+
+
+
 ## Features
- 
-- Awesome function
-- Awesome UI
-- ...
- 
-For more information, see `awesome-tool --help`.
- 
-## Requirement
- 
-- Requirement
-- Requirement
-- Requirement
- 
-## Usage
- 
-1. Usage
-2. Usage
-3. Usage
- 
-## Installation
- 
+
+- NEXT.js
+- typescript
+- node.js-ver.20
+- tialwindCSS
+- MUI
+- React-custom-rulette
+- React-typing
+- 
+
+
+
+## Test on local
+
+```bash
+git clone https://github.com/2k2e2n/valoapp.git
 ```
-$ git clone https://github.com/TomoakiTANAKA/awesome-tool
-$ cd awesome-tool
-$ sh setup.sh
-$ ~do anything~
+
+```bash
+yarn run dev
 ```
- 
-## Test
- 
-1. test
-2. test
-3. test
- 
-## Deploy
- 
-1. deploy
-2. deploy
-3. deploy
- 
-## Anything Else
- 
-AnythingAnythingAnything
-AnythingAnythingAnything
-AnythingAnythingAnything
- 
+
+
+
 ## Author
- 
-[@TanakanoAnchan](https://twitter.com/TanakanoAnchan)
-mail to: xxxx@mail.com
- 
+
+[@2k2e2n]([2k2e2n · GitHub](https://github.com/2k2e2n))
+[Author; twitter]([x.com](https://x.com/2k2e2n))
+
+
+
 ## License
- 
+
 [MIT](http://TomoakiTANAKA.mit-license.org)</blockquote>
