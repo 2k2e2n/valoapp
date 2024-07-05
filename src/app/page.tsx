@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 import "./globals.css";
 import Selectbutton from "@/components/Selectbutton";
@@ -8,9 +8,11 @@ import React from 'react';
 import Link from 'next/link';
 
 
+
+
 import dynamic from 'next/dynamic'
 import Background from '@/components/Background';
-
+import { AudioPlayer } from 'react-audio-play';
 import { TypeAnimation } from 'react-type-animation';
 
 import { Button, createTheme, Stack } from '@mui/material';
@@ -23,12 +25,11 @@ import { grey } from '@mui/material/colors';
 import Card from '@mui/joy/Card';
 import toast, { Toaster } from 'react-hot-toast';
 
+import useSound from 'use-sound';
 
 const Wheel = dynamic(() => import('react-custom-roulette').then(mod => mod.Wheel), {
     ssr: false
   })
-
-
 
 export default function Home() {
 
@@ -51,8 +52,6 @@ let   [data,setdata] = useState([
     { option: 'SUNSET'  },
     { option: 'ABYSS'  },
 ]);
-
-
 
 
 const [resultnum, setresultnum] = useState<number>(0);
@@ -79,7 +78,6 @@ function endroulette (){
 }
 
 
-
 //マップボタンクリック
 function handler(mapname: string) {
     if(!mustSpin) {
@@ -102,7 +100,10 @@ function handler(mapname: string) {
     }
 }
 
-
+//SOUND
+const handlePlay = () => {
+    console.log('Audio started playing');
+};
 
 return (
 <main  className=" text-white">
@@ -112,6 +113,8 @@ return (
         </div>
         <div className='z-10'>
 <div >
+
+
 
 
     <Toolbar sx={{ bgcolor: '#53212B', color: '#ffffff' }} >
@@ -127,8 +130,6 @@ return (
 
 <div className='flex justify-center'>
     <button onClick={()=>startroulette()} className={`scale-95 duration-200 ${mustSpin ? 'scale-95' : 'hover:scale-100'}`}>
-
-
 
 
             <Wheel
@@ -173,8 +174,10 @@ return (
                     />
                 </div>
 
+
+
 <div className='flex flex-wrap justify-center mx-16'>
-            <button onClick={()=>handler('ASCENT')}>
+            <button onClick={()=>handler('ASCENT')} >
                 <Selectbutton data={data} mapname={'ASCENT'}/>
             </button>
             <button onClick={()=>handler('BIND')}>

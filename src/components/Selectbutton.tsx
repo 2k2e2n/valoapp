@@ -3,6 +3,8 @@ import { Result } from "postcss";
 import React, { useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 
+
+
 import BACKGROUND    from "@/../public/images/Background/Wallpaper.webp";
 import ASCENT        from '@/../public/images/Result/ASCENT.webp';
 import BIND          from "@/../public/images/Result/BIND.webp"

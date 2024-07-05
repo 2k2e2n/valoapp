@@ -52,7 +52,7 @@ useEffect(() => {
 
 return (
     <div>
-        <div className={`duration-200 fixed top-0 left-0 w-full h-screen z-[-1] blur-sm ${ismustSpin ? 'scale-95' : 'scale-100'}`}>
+        <div className={`duration-200 fixed top-0 left-0 w-full h-screen z-[-1] blur-sm ${ismustSpin ? '' : 'scale-105'}`}>
         <Image
         src={BACKGROUND}
         alt=""

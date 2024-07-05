@@ -17,13 +17,16 @@
     "@mui/joy": "^5.0.0-beta.36",
     "@mui/material": "^5.15.21",
     "@mui/material-nextjs": "^5.15.11",
+    "install": "^0.13.0",
     "next": "14.2.4",
     "react": "^18",
+    "react-audio-play": "^1.0.2",
     "react-custom-roulette": "^1.4.1",
     "react-dom": "^18",
     "react-hook-roulette": "^0.0.10",
     "react-hot-toast": "^2.4.1",
-    "react-type-animation": "^3.2.0"
+    "react-type-animation": "^3.2.0",
+    "use-sound": "^4.0.3"
   },
   "devDependencies": {
     "@types/node": "^20",
