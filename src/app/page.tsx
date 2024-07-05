@@ -100,10 +100,7 @@ function handler(mapname: string) {
     }
 }
 
-//SOUND
-const handlePlay = () => {
-    console.log('Audio started playing');
-};
+
 
 return (
 <main  className=" text-white">
@@ -130,6 +127,8 @@ return (
 
 <div className='flex justify-center'>
     <button onClick={()=>startroulette()} className={`scale-95 duration-200 ${mustSpin ? 'scale-95' : 'hover:scale-100'}`}>
+
+
 
 
             <Wheel

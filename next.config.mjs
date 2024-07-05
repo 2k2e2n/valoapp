@@ -4,7 +4,20 @@ const nextConfig = {
     output: 'export',
     images: {
         unoptimized: true,
-    }
+    },
+    webpack(config, options) {
+        config.module.rules.push({
+          test: /\.mp3$/,
+          use: {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+            },
+          },
+        });
+        return config;
+      },
+    
 };
 
 export default nextConfig;
