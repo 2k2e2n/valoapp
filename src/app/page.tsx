@@ -98,6 +98,8 @@ function handler(mapname: string) {
     return data;
     });
     console.error(data);
+
+    }
 }
 
 
