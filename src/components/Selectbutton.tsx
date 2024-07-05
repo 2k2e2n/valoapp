@@ -14,6 +14,7 @@ import LOTUS         from "@/../public/images/Result/LOTUS.webp"
 import PEARL         from "@/../public/images/Result/PEARL.webp"
 import SPLIT         from "@/../public/images/Result/SPLIT.webp"
 import SUNSET        from "@/../public/images/Result/SUNSET.webp"
+import ABYSS        from "@/../public/images/Result/ABYSS.webp"
 
 
 type Props = {
@@ -45,6 +46,7 @@ const Selectbutton: React.FC<Props>  = ({data, mapname}) => {
             if(mapname === 'PEARL'      ) {mapdata = PEARL};
             if(mapname === 'SPLIT'      ) {mapdata = SPLIT};
             if(mapname === 'SUNSET'     ) {mapdata = SUNSET};
+            if(mapname === 'ABYSS'     ) {mapdata = ABYSS};
             return mapdata;
         })
     
