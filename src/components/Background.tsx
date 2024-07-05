@@ -43,7 +43,7 @@ useEffect(() => {
         if(mapname === 'PEARL'      ) {mapdata = PEARL};
         if(mapname === 'SPLIT'      ) {mapdata = SPLIT};
         if(mapname === 'SUNSET'     ) {mapdata = SUNSET};
-        if(mapname === 'ABYSS'     ) {mapdata = ABYSS};
+        if(mapname === 'ABYSS'      ) {mapdata = ABYSS};
         return mapdata;
     })
 
