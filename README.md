@@ -1,11 +1,8 @@
 # VALORANT ROULETTE OULINE ver.2
 
-
-
-<div class="field">
+<table><tr>
 
 <img src="https://img.shields.io/static/v1?label=&message=react&color=%2361DAFB&style=for-the-badge&logo=react&logoColor=ffffff" alt="react">
-
 
 <img src="https://img.shields.io/static/v1?label=&message=next.js&color=%23000000&style=for-the-badge&logo=nextdotjs&logoColor=ffffff" alt="next.js">
 
@@ -17,13 +14,10 @@
 
 <img src="https://img.shields.io/static/v1?label=&message=MUI&color=%23007FFF&style=for-the-badge&logo=mui&logoColor=ffffff" alt="MUI">
 
-</div>
+</tr></table>
 
 
-[CLick here to open page!](https://github.com/2k2e2n/valoapp)
-
-![CLick here to open page!](./public/demo-button.png)
-
+[<img src="./public/demo-button.png">](https://valoapp.vercel.app/)
 
 
 
