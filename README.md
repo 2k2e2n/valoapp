@@ -1,10 +1,15 @@
 [CLick here to open page!](https://github.com/2k2e2n/valoapp)
 
+![demo]("./public/Demo.gif")
+
 # VALORANT ROULETTE OULINE ver.2
 
+> [!NOTE]
+> もしなにも表示されない場合は``` F5 ``` キーを押してページをリロードしてください
 
+## What is that
 
-Remake VALORANT map roulette using REACT!
+昔に作成した機能をNEXT.jsでリメイクしました
 
 ## HOW TO USE
 
