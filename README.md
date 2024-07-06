@@ -17,7 +17,7 @@
 </tr></table>
 
 
-[<img src="./public/demo-button.png">](https://valoapp.vercel.app/)
+[<div align="center" > <img src="./public/demo-button.png"></div>](https://valoapp.vercel.app/)
 
 
 
