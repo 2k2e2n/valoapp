@@ -1,4 +1,8 @@
-# VALORANT ROULETTE OULINE ver.2
+## 👇Click the button below
+[<div align="center" > <img src="./public/demo-button.png"></div>](https://valoapp.vercel.app/)
+
+
+# 🛞VALORANT ROULETTE OULINE ver.2
 
 <table>
 <tr>
@@ -11,12 +15,11 @@
 </table>
 
 
-## DEMO
-
-[<div align="center" > <img src="./public/demo-button.png"></div>](https://valoapp.vercel.app/)
 
 
 
+
+## 🔧DEMO
 
 <p align="center">
     <img src="./public/Demo.gif" width="400">
@@ -30,11 +33,11 @@
 > [!NOTE]
 > バグがありましたらご連絡ください
 
-## What is that
+## 🧐What is that
 
 昔に作成したVALORANT ROULETTEをNEXT.jsでリメイクしました
 
-## HOW TO USE
+## 🤔HOW TO USE
 
 1. マップを選択
 
@@ -45,7 +48,7 @@
 <img src="./public/Demo.gif" width="200">
 
 
-## Test on local
+## 🧪Test on local
 
 1. リポジトリをクローン
 
@@ -59,10 +62,10 @@ git clone https://github.com/2k2e2n/valoapp.git
 yarn run dev
 ```
 
-## Author
+## ✍🏼Author
 
 <img src="https://img.shields.io/static/v1?label=&message=2k2e2n-x(Twitter)&color=%23000000&style=for-the-badge&logo=x&logoColor=ffffff" alt="x(Twitter)">
 
-## License
+## 📜License
 
 [MIT Lisence](https://github.com/2k2e2n/valoapp/blob/master/LICENSE)</blockquote>
