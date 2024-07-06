@@ -1,6 +1,6 @@
 ## 👇Click the button below
 
-[<div align="center" > <img src="./public/demo-button.png"></div>](https://valoapp.vercel.app)
+[<img src="./public/demo-button.png">](https://valoapp.vercel.app)
 
 
 # 🛞VALORANT ROULETTE OULINE ver.2
