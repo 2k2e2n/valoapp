@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "VALORANT ROULETTE ver.2",
-  description: "valorant roulette online",
+  description: "valorant roulette online version.2",
 };
 
 export default function RootLayout({
